@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CategoryStoreRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -36,9 +37,21 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryStoreRequest $request)
     {
-        //
+        // $image = $request->file('image')->store('public/categories');
+
+        $newImageName = uniqid() . '-' . $request->name . '.' . $request->image->extension();
+
+        $request->image->move(public_path('images'), $newImageName);
+
+        Category::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'image' => $newImageName
+        ]);
+
+        return to_route('admin.categories.index');
     }
 
     /**
@@ -58,9 +71,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
-        //
+        return view('admin.categories.edit', compact('category'));
     }
 
     /**
@@ -70,9 +83,24 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+        ]);
+
+        $newImageName = uniqid() . '-' . $request->name . '.' . $request->image->extension();
+
+        $request->image->move(public_path('images'), $newImageName);
+
+        Category::where('id', $category->id)->update([
+            'name' => $request->name,
+            'description' => $request->description,
+            'image' => $newImageName,
+        ]);
+
+        return to_route('admin.categories.index');
     }
 
     /**
@@ -81,8 +109,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-        //
+        Category::where('id', $category->id)->delete();
+        return to_route('admin.categories.index');
     }
 }
