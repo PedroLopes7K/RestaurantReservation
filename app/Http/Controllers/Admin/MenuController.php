@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MenuStoreRequest;
 use App\Models\Category;
+use App\Models\CategoryMenu;
 use App\Models\Menu;
 use Illuminate\Http\Request;
 
@@ -77,9 +78,11 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Menu $menu)
     {
-        //
+
+        $categories = Category::all();
+        return view('admin.menus.edit', compact('menu', 'categories'));
     }
 
     /**
@@ -89,9 +92,29 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Menu $menu)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+        ]);
+
+        $newImageName = uniqid() . '-' . $request->name . '.' . $request->image->extension();
+
+        $request->image->move(public_path('images'), $newImageName);
+
+        Menu::where('id', $menu->id)->update([
+            'name' => $request->name,
+            'description' => $request->description,
+            'image' => $newImageName,
+            'price' => $request->price
+        ]);
+
+        if ($request->has('categories')) {
+            $menu->categories()->sync($request->categories);
+        }
+        return to_route('admin.menus.index');
     }
 
     /**
@@ -100,8 +123,11 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Menu $menu)
     {
-        //
+
+        CategoryMenu::where('menu_id', $menu->id)->delete();
+        $menu->delete();
+        return to_route('admin.menus.index');
     }
 }
