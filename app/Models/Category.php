@@ -10,4 +10,10 @@ class Category extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'image', 'description'];
+
+    public function menus()
+    {
+        //                                      // if table was named like 'cetegoriees' this was necessary   
+        return $this->belongsToMany(Menu::class, 'category_menu');
+    }
 }
