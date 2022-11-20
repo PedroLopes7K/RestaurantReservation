@@ -33,7 +33,7 @@ class ReservationController extends Controller
     public function create()
     {
 
-        $tables = Table::where('status', TableStatus::Avalaiable)->get();
+        $tables = Table::where('status', TableStatus::Disponivel)->get();
         return view('admin.reservations.create', compact('tables'));
     }
 
@@ -53,10 +53,8 @@ class ReservationController extends Controller
         }
 
         $request_date = Carbon::parse($request->reservation_date);
-        Log::info('data request');
-        Log::info($request_date);
+
         foreach ($table->reservations as $res) {
-            Log::info($res->reservation_date);
 
             if ($res->reservation_date == $request_date) {
                 return back()->with('warning', 'Mesa já reservada para essa data.');

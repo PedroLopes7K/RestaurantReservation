@@ -4,7 +4,7 @@ namespace App\Enums;
 
 enum TableLocation: string
 {
-  case Front = 'front';
-  case Inside = 'inside';
-  case Outside = 'outside';
+  case Varanda = 'varanda';
+  case Salao = 'dentro';
+  case Fundos = 'fundos';
 }

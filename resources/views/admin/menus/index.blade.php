@@ -8,7 +8,7 @@
   <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
       <div class="flex justify-end m-2 p-2">
-        <a href="{{ route('admin.menus.create')}}" class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 rounded-lg text-white">Create Menu</a>
+        <a href="{{ route('admin.menus.create')}}" class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 rounded-lg text-white">Criar Menu</a>
       </div>
 
       <div class="overflow-x-auto relative">
@@ -16,16 +16,16 @@
           <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th scope="col" class="py-3 px-6">
-                Name
+                Nome
               </th>
               <th scope="col" class="py-3 px-6">
-                Image
+                Imagem
               </th>
               <th scope="col" class="py-3 px-6">
-                Price
+                Preço
               </th>
               <th scope="col" class="py-3 px-6">
-                Description
+                Descrição
               </th>
             </tr>
           </thead>
@@ -48,12 +48,12 @@
 
               <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 <div class="flex space-x-2">
-                  <a href="{{ route('admin.menus.edit', $menu->id)}}" class="px-4 py-2 bg-green-500 hover:bg-green-700 rounded-lg text-white">Edit</a>
+                  <a href="{{ route('admin.menus.edit', $menu->id)}}" class="px-4 py-2 bg-green-500 hover:bg-green-700 rounded-lg text-white">Editar</a>
 
                   <form class="px-4 py-2 bg-red-500 hover:bg-red-700 rounded-lg text-white" method="POST" action="{{ route('admin.menus.destroy', $menu->id)  }}" onsubmit="return confirm('Tem certeza?')">
                     @csrf
                     @method('DELETE')
-                    <button type="submit">Delete</button>
+                    <button type="submit">Deletar</button>
                   </form>
                 </div>
               </th>

@@ -8,7 +8,7 @@
   <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
       <div class="flex justify-end m-2 p-2">
-        <a href="{{ route('admin.tables.create') }}" class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 rounded-lg text-white">New Table</a>
+        <a href="{{ route('admin.tables.create') }}" class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 rounded-lg text-white">Criar Mesa</a>
       </div>
       <div class="flex flex-col">
         <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -18,19 +18,19 @@
                 <thead class="bg-gray-50 dark:bg-gray-700">
                   <tr>
                     <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                      Name
+                      Nome
                     </th>
                     <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                      Guest
+                      Pessoas
                     </th>
                     <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                      Staus
+                      Status
                     </th>
                     <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                      Location
+                      Localização
                     </th>
                     <th scope="col" class="relative py-3 px-6">
-                      <span class="sr-only">Edit</span>
+                      <span class="sr-only">Editar</span>
                     </th>
                   </tr>
                 </thead>
@@ -51,11 +51,11 @@
                     </td>
                     <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
                       <div class="flex space-x-2">
-                        <a href="{{ route('admin.tables.edit', $table->id) }}" class="px-4 py-2 bg-green-500 hover:bg-green-700 rounded-lg  text-white">Edit</a>
+                        <a href="{{ route('admin.tables.edit', $table->id) }}" class="px-4 py-2 bg-green-500 hover:bg-green-700 rounded-lg  text-white">Editar</a>
                         <form class="px-4 py-2 bg-red-500 hover:bg-red-700 rounded-lg text-white" method="POST" action="{{ route('admin.tables.destroy', $table->id) }}" onsubmit="return confirm('Are you sure?');">
                           @csrf
                           @method('DELETE')
-                          <button type="submit">Delete</button>
+                          <button type="submit">Deletar</button>
                         </form>
                       </div>
                     </td>
