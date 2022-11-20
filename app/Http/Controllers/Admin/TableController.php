@@ -47,7 +47,7 @@ class TableController extends Controller
             'location' => $request->location,
         ]);
 
-        return to_route('admin.tables.index');
+        return to_route('admin.tables.index')->with('success', 'Mesa adicionada com sucesso!!');
     }
 
     /**
@@ -96,7 +96,7 @@ class TableController extends Controller
             'location' => $request->location,
         ]);
 
-        return to_route('admin.tables.index');
+        return to_route('admin.tables.index')->with('warning', 'Mesa atualizada com sucesso!');
     }
 
     /**
@@ -109,6 +109,6 @@ class TableController extends Controller
     {
         $table->delete();
 
-        return to_route('admin.tables.index');
+        return to_route('admin.tables.index')->with('warning', 'Mesa deletada com sucesso!');
     }
 }
