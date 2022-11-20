@@ -111,6 +111,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
+        $category->menus()->detach();
         Category::where('id', $category->id)->delete();
         return to_route('admin.categories.index')->with('warning', 'Categoria atualizada com sucesso!');
     }
