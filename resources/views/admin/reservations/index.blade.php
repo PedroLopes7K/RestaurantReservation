@@ -52,7 +52,7 @@
                     <td class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                       {{ $reservation->table->name }}
                     </td>
-                    <td class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                    <td class="py-4 text-center text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                       {{ $reservation->guest_number }}
                     </td>
                     <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
