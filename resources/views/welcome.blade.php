@@ -1,18 +1,17 @@
 <x-guest-layout>
     <!-- Main Hero Content -->
-    <div class="container max-w-lg px-4 py-32 mx-auto text-left bg-center bg-no-repeat bg-cover md:max-w-none md:text-center" style="background-image: url('https://cdn.pixabay.com/photo/2016/11/18/14/39/beans-1834984_960_720.jpg')">
-        <h1 class="font-mono text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 md:text-center sm:leading-none lg:text-5xl">
-            <span class="inline md:block">Welcome To Larainfo Restaurant</span>
+    <!-- <div class="container max-w-lg px-4 py-32 mx-auto text-left bg-center bg-no-repeat bg-cover md:max-w-none md:text-center" style="background-image: url('https://cdn.pixabay.com/photo/2016/11/18/14/39/beans-1834984_960_720.jpg')"> -->
+    <div class="container max-w-lg px-4 py-32 mx-auto text-left bg-gradient-to-r from-green-400 to-blue-500 md:max-w-none md:text-center">
+        <h1 class="font-mono text-3xl font-extrabold  text-transparent bg-clip-text bg-gradient-to-r from-slate-100 to-green-500  md:text-center sm:leading-none lg:text-5xl">
+            <span class="inline md:block"> LaraFood Restaurante</span>
         </h1>
         <div class="mx-auto mt-2 text-green-50 md:text-center lg:text-lg">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta voluptatem ab necessitatibus illo
-            praesentium
-            culpa excepturi quae commodi quaerat,
+
         </div>
         <div class="flex flex-col items-center mt-12 text-center">
             <span class="relative inline-flex w-full md:w-auto">
                 <a href="{{ route('reservations.step-one') }}" type="button" class="inline-flex items-center justify-center px-6 py-2 text-base font-bold leading-6 text-white bg-green-600 rounded-full lg:w-full md:w-auto hover:bg-green-500 focus:outline-none">
-                    Make your Reservation
+                    Fazer Reserva
                 </a>
         </div>
     </div>
@@ -25,9 +24,9 @@
                         <!-- <h1
               class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl"
             > -->
-                        <h3 class="text-xl">OUR STORY
+                        <h3 class="text-xl">Nossa Historia
                         </h3>
-                        <h2 class="text-4xl text-green-600">Welcome</h2>
+                        <h2 class="text-4xl text-green-600">Bem-Vindo(a)</h2>
                         <!-- </h1> -->
                         <p class="mx-auto text-base text-gray-500 sm:max-w-md lg:text-xl md:max-w-3xl">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus nemo incidunt
@@ -38,7 +37,7 @@
                         </p>
                         <div class="relative flex">
                             <a href="#_" class="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-green-600 rounded-md sm:mb-0 hover:bg-green-700 sm:w-auto">
-                                Read More
+                                Saiba mais
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <line x1="5" y1="12" x2="19" y2="12"></line>
                                     <polyline points="12 5 19 12 12 19"></polyline>
@@ -60,9 +59,9 @@
             <div class="flex flex-wrap items-center -mx-3">
                 <div class="order-1 w-full px-3 lg:w-1/2 lg:order-0">
                     <div class="w-full lg:max-w-md">
-                        <h2 class="mb-4 text-2xl font-bold">About Us</h2>
+                        <h2 class="mb-4 text-2xl font-bold">Sobre Nós</h2>
                         <h2 class="mb-4 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
-                            WHY CHOOSE US?</h2>
+                            Por que nos escolher?</h2>
 
                         <p class="mb-4 font-medium tracking-tight text-gray-400 xl:mb-6">Lorem ipsum dolor sit amet
                             consectetur
@@ -75,21 +74,15 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z">
                                     </path>
                                 </svg>
-                                <span class="font-medium text-gray-500">Faster Processing and Delivery</span>
+                                <span class="font-medium text-gray-500">Preparo Rapido e Delivery</span>
                             </li>
                             <li class="flex items-center py-2 space-x-4 xl:py-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
-                                <span class="font-medium text-gray-500">Easy Payments</span>
+                                <span class="font-medium text-gray-500">Pagamento Facíl</span>
                             </li>
-                            <li class="flex items-center py-2 space-x-4 xl:py-3">
-                                <svg class="w-8 h-8 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
-                                    </path>
-                                </svg>
-                                <span class="font-medium text-gray-500">100% Protection and Security for Your App</span>
-                            </li>
+
                         </ul>
                     </div>
                 </div>
@@ -99,9 +92,9 @@
     </section>
     <section class="mt-8 bg-white">
         <div class="mt-4 text-center">
-            <h3 class="text-2xl font-bold">Our Menu</h3>
+            <h3 class="text-2xl font-bold">Nosso Menu</h3>
             <h2 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
-                TODAY'S SPECIALITY</h2>
+                Pratos do dia</h2>
         </div>
         <div class="container w-full px-5 py-6 mx-auto">
             <div class="grid lg:grid-cols-4 gap-y-6">
@@ -128,8 +121,8 @@
     <section class="pt-4 pb-12 bg-gray-800">
         <div class="my-16 text-center">
             <h2 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
-                Testimonial </h2>
-            <p class="text-xl text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. soluta sapient</p>
+                Feedbacks </h2>
+            <p class="text-xl text-white">Feedbacks de alguns clientes</p>
         </div>
         <div class="grid gap-2 lg:grid-cols-3">
             <div class="max-w-md p-4 bg-white rounded-lg shadow-lg">
