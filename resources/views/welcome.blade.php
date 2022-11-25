@@ -101,7 +101,7 @@
                 @if($specials)
                 @foreach ($specials->menus as $menu)
                 <div class="max-w-xs mx-4 mb-2 rounded-lg shadow-lg">
-                    <img class="w-full h-48" src="{{ Storage::url($menu->image) }}" alt="Image" />
+                    <img class="w-full h-48" src="{{ asset('images/' . $menu->image) }}" alt="Image" />
                     <div class="px-6 py-4">
                         <h4 class="mb-3 text-xl font-semibold tracking-tight text-green-600 uppercase">
                             {{ $menu->name }}
@@ -124,7 +124,7 @@
                 Feedbacks </h2>
             <p class="text-xl text-white">Feedbacks de alguns clientes</p>
         </div>
-        <div class="grid gap-2 lg:grid-cols-3">
+        <div class="grid gap-2 lg:grid-cols-3 mx-6">
             <div class="max-w-md p-4 bg-white rounded-lg shadow-lg">
                 <div class="flex justify-center -mt-16 md:justify-end">
                     <img class="object-cover w-20 h-20 border-2 border-green-500 rounded-full" src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80">
